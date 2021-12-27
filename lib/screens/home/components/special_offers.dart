@@ -16,7 +16,7 @@ class SpecialOffers extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
-            title: "Special for you",
+            title: "Điện thoại phổ biến: ",
             press: () {},
           ),
         ),
@@ -26,15 +26,27 @@ class SpecialOffers extends StatelessWidget {
           child: Row(
             children: [
               SpecialOfferCard(
-                image: "assets/images/Image Banner 2.png",
-                category: "Smartphone",
-                numOfBrands: 18,
+                image: "assets/products/dt_1.png",
+                category: "IPhone 13",
+                numOfPrices: '23.490.000đ',
                 press: () {},
               ),
               SpecialOfferCard(
-                image: "assets/images/Image Banner 3.png",
-                category: "Fashion",
-                numOfBrands: 24,
+                image: "assets/products/dt_2.png",
+                category: "OPPO Reno6 Z ",
+                numOfPrices: '9.490.000đ',
+                press: () {},
+              ),
+              SpecialOfferCard(
+                image: "assets/products/dt_3.png",
+                category: "Galaxy S21+",
+                numOfPrices: '16.990.000đ',
+                press: () {},
+              ),
+              SpecialOfferCard(
+                image: "assets/products/dt_4.png",
+                category: "Xiaomi 11 Lite",
+                numOfPrices: '9.490.000đ',
                 press: () {},
               ),
               SizedBox(width: getProportionateScreenWidth(20)),
@@ -46,17 +58,18 @@ class SpecialOffers extends StatelessWidget {
   }
 }
 
+
 class SpecialOfferCard extends StatelessWidget {
   const SpecialOfferCard({
     Key? key,
     required this.category,
     required this.image,
-    required this.numOfBrands,
+    required this.numOfPrices,
     required this.press,
   }) : super(key: key);
 
   final String category, image;
-  final int numOfBrands;
+  final String numOfPrices;
   final GestureTapCallback press;
 
   @override
@@ -66,15 +79,15 @@ class SpecialOfferCard extends StatelessWidget {
       child: GestureDetector(
         onTap: press,
         child: SizedBox(
-          width: getProportionateScreenWidth(242),
-          height: getProportionateScreenWidth(100),
+          width: getProportionateScreenWidth(200),
+          height: getProportionateScreenWidth(255),
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(5),
             child: Stack(
               children: [
                 Image.asset(
                   image,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -88,23 +101,20 @@ class SpecialOfferCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: getProportionateScreenWidth(15.0),
-                    vertical: getProportionateScreenWidth(10),
-                  ),
+                Container(
+                  padding: EdgeInsets.only(left: 60,top: 220,right: 20,bottom: 10),
                   child: Text.rich(
                     TextSpan(
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.black,),
                       children: [
                         TextSpan(
                           text: "$category\n",
                           style: TextStyle(
-                            fontSize: getProportionateScreenWidth(18),
+                            fontSize: getProportionateScreenWidth(15),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        TextSpan(text: "$numOfBrands Brands")
+                        TextSpan(text: "$numOfPrices",style: TextStyle(fontSize: getProportionateScreenWidth(15),fontWeight: FontWeight.bold,color: Colors.red))
                       ],
                     ),
                   ),

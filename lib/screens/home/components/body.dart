@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
-import 'categories.dart';
 import 'discount_banner.dart';
 import 'popular_product.dart';
 import 'special_offers.dart';
+import 'logo.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -13,8 +13,8 @@ class Body extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
+            Longo(),
             bannerMain(),
-            Categories(),
             SpecialOffers(),
             SizedBox(height: getProportionateScreenWidth(30)),
             PopularProducts(),

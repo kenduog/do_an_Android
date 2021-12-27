@@ -12,20 +12,22 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(80.0),
+        child:  AppBar(
         actions: [
           Padding(
-            padding: EdgeInsets.only(left: 5,top: 3),
+            padding: EdgeInsets.only(right: 20,top: 10),
             child:  SearchField(),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 5, left: 5,top: 3),
+            padding: EdgeInsets.only(right: 5,top: 10),
             child: IconBtnWithCounter(
             svgSrc: "assets/icons/Cart Icon.svg",
             press: () => Navigator.pushNamed(context, CartScreen.routeName),
           ),
           ),
-          Padding(padding: EdgeInsets.only(top: 3,right: 10),
+          Padding(padding: EdgeInsets.only(top: 10,right: 25),
           child:  IconBtnWithCounter(
               svgSrc: "assets/icons/Bell.svg",
               numOfitem: 3,
@@ -33,8 +35,10 @@ class HomeScreen extends StatelessWidget {
             ),)
         ],
       ),
+      ),
       body: Body(),
       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 }
+//Color(0xFFFF7643)
