@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.03),
-                Text("Complete Profile", style: headingStyle),
+                Text("Hoàn thành thông tin cá nhân", style: headingStyle),
                 Text(
                   "Complete your details or continue  \nwith social media",
                   textAlign: TextAlign.center,

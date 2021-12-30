@@ -16,13 +16,10 @@ class SplashContent extends StatelessWidget {
     return Column(
       children: <Widget>[
         Spacer(),
-        Text(
-          "TOKOTO",
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(36),
-            color: kPrimaryColor,
-            fontWeight: FontWeight.bold,
-          ),
+        Image.asset(
+          'assets/banner/Logo.png',
+          width: 350,
+          height: 70,
         ),
         Text(
           text!,
