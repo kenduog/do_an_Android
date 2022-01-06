@@ -44,4 +44,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-//Color(0xFFFF7643)

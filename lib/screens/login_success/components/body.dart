@@ -26,7 +26,11 @@ class Body extends StatelessWidget {
         SizedBox(
           width: SizeConfig.screenWidth * 0.6,
           child: DefaultButton(
+<<<<<<< Updated upstream
             text: "Trở lại trang chủ",
+=======
+            text: "Về trang chủ",
+>>>>>>> Stashed changes
             press: () {
               Navigator.pushNamedAndRemoveUntil(
                   context, HomeScreen.routeName, (_) => false);
