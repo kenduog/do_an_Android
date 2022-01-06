@@ -4,7 +4,7 @@ import 'setting_menu.dart';
 import 'setting_pic.dart';
 import '../../sign_in/sign_in_screen.dart';
 import '../../profile/profile_screen.dart';
-
+import '../../reset_password/reset_password_screen.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -19,7 +19,7 @@ class Body extends StatelessWidget {
             text: "Thay dổi mật khẩu",
             icon: "assets/icons/Settings.svg",
             press: () => {
-              
+               Navigator.pushNamed(context, Reset_Password_Screen.routeName)
             },
           ),
            ProfileMenu(

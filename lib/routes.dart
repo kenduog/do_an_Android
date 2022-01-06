@@ -15,6 +15,8 @@ import 'package:saigon_store/screens/change_profile_success/change_profile_succe
 import 'screens/sign_up/sign_up_screen.dart';
 import 'screens/history_cart/history_cart_screen.dart';
 import 'screens/setting/setting_screen.dart';
+import 'screens/change_password_success/change_password_success_screen.dart';
+import 'screens/reset_password/reset_password_screen.dart';
 
 // We use name route
 // All our routes will be available here
@@ -35,4 +37,6 @@ final Map<String, WidgetBuilder> routes = {
   ChangeProfileSuccessScreen.routeName: (context) => ChangeProfileSuccessScreen(),
   History_Cart.routeName: (context) => History_Cart(),
   SettingScreen.routeName: (context) => SettingScreen(),
+  ChangePasswordSuccessScreen.routeName: (context) => ChangePasswordSuccessScreen(),
+  Reset_Password_Screen.routeName: (context) => Reset_Password_Screen(),
 };
