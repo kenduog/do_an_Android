@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
+import '../../../models/Product.dart';
 
 class SpecialOffers extends StatelessWidget {
   const SpecialOffers({
     Key? key,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,26 +28,30 @@ class SpecialOffers extends StatelessWidget {
             children: [
               SpecialOfferCard(
                 image: "assets/products/dt_1.png",
-                category: "IPhone 13",
+                product: "IPhone 13",
                 numOfPrices: '23.490.000đ',
+                iconheart: "assets/icons/Heart Icon_2.svg",
                 press: () {},
               ),
               SpecialOfferCard(
                 image: "assets/products/dt_2.png",
-                category: "OPPO Reno6 Z ",
+                product: "OPPO Reno6 Z ",
                 numOfPrices: '9.490.000đ',
+                iconheart: "assets/icons/Heart Icon_2.svg",
                 press: () {},
               ),
               SpecialOfferCard(
                 image: "assets/products/dt_3.png",
-                category: "Galaxy S21+",
+                product: "Galaxy S21+",
                 numOfPrices: '16.990.000đ',
+                iconheart: "assets/icons/Heart Icon_2.svg",
                 press: () {},
               ),
               SpecialOfferCard(
                 image: "assets/products/dt_4.png",
-                category: "Xiaomi 11 Lite",
+                product: "Xiaomi 11 Lite",
                 numOfPrices: '9.490.000đ',
+                iconheart: "assets/icons/Heart Icon_2.svg",
                 press: () {},
               ),
               SizedBox(width: getProportionateScreenWidth(20)),
@@ -62,13 +67,14 @@ class SpecialOffers extends StatelessWidget {
 class SpecialOfferCard extends StatelessWidget {
   const SpecialOfferCard({
     Key? key,
-    required this.category,
+    required this.product,
     required this.image,
+    required this.iconheart,
     required this.numOfPrices,
     required this.press,
   }) : super(key: key);
 
-  final String category, image;
+  final String product, image, iconheart;
   final String numOfPrices;
   final GestureTapCallback press;
 
@@ -80,10 +86,10 @@ class SpecialOfferCard extends StatelessWidget {
         onTap: press,
         child: SizedBox(
           width: getProportionateScreenWidth(200),
-          height: getProportionateScreenWidth(255),
+          height: getProportionateScreenWidth(285),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(5),
-            child: Stack(
+            child: Column(
               children: [
                 Image.asset(
                   image,
@@ -95,29 +101,42 @@ class SpecialOfferCard extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Color(0xFF343434).withOpacity(0.4),
-                        Color(0xFF343434).withOpacity(0.15),
+                        Colors.transparent,
                       ],
                     ),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.only(left: 60,top: 220,right: 20,bottom: 10),
-                  child: Text.rich(
-                    TextSpan(
-                      style: TextStyle(color: Colors.black,),
-                      children: [
-                        TextSpan(
-                          text: "$category\n",
-                          style: TextStyle(
-                            fontSize: getProportionateScreenWidth(15),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(text: "$numOfPrices",style: TextStyle(fontSize: getProportionateScreenWidth(15),fontWeight: FontWeight.bold,color: Colors.red))
-                      ],
+                Text(
+                    "$product\n",
+                    style: TextStyle(
+                      fontSize: getProportionateScreenWidth(15),
+                      fontWeight: FontWeight.bold,
+                      ),
+                    ),  
+                Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                Padding(padding: EdgeInsets.only(left: 62,bottom: 20),
+                child: Text(
+                  "$numOfPrices",style: TextStyle(fontSize: getProportionateScreenWidth(15),fontWeight: FontWeight.bold,color: Colors.red)),
+                    ), 
+                InkWell(
+                    borderRadius: BorderRadius.circular(50),
+                    onTap: () {},
+                    child: Container(
+                      padding: EdgeInsets.only(bottom: 20),
+                      height: getProportionateScreenWidth(28),
+                      width: getProportionateScreenWidth(28),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: SvgPicture.asset(
+                        iconheart,
+                        color:Color(0xFFDBDEE4),
+                      ),
                     ),
                   ),
+                  ]
                 ),
               ],
             ),

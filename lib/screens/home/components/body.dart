@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../size_config.dart';
 import 'discount_banner.dart';
 import 'popular_product.dart';
-import 'special_offers.dart';
+import 'special_product.dart';
 import 'logo.dart';
 
 class Body extends StatelessWidget {
