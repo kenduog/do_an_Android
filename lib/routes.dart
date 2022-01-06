@@ -10,8 +10,11 @@ import 'package:saigon_store/screens/otp/otp_screen.dart';
 import 'package:saigon_store/screens/profile/profile_screen.dart';
 import 'package:saigon_store/screens/sign_in/sign_in_screen.dart';
 import 'package:saigon_store/screens/splash/splash_screen.dart';
-
+import 'package:saigon_store/screens/my_profile/my_profile_screen.dart';
+import 'package:saigon_store/screens/change_profile_success/change_profile_success_screen.dart';
 import 'screens/sign_up/sign_up_screen.dart';
+import 'screens/history_cart/history_cart_screen.dart';
+import 'screens/setting/setting_screen.dart';
 
 // We use name route
 // All our routes will be available here
@@ -28,4 +31,8 @@ final Map<String, WidgetBuilder> routes = {
   CartScreen.routeName: (context) => CartScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
   FavouriteScreen.routeName: (context) => FavouriteScreen(),
+  MyProfileScreen.routeName: (context) => MyProfileScreen(),
+  ChangeProfileSuccessScreen.routeName: (context) => ChangeProfileSuccessScreen(),
+  History_Cart.routeName: (context) => History_Cart(),
+  SettingScreen.routeName: (context) => SettingScreen(),
 };
